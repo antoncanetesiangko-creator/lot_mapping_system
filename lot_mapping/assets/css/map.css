@@ -1,0 +1,841 @@
+/* ========================================
+   1. BASE STYLES
+======================================== */
+
+:root {
+    --green: #16834a;
+    --dark: #173b2a;
+    --page: #f3f6fa;
+    --border: #e2e8f0;
+    --muted: #64748b;
+    --text: #172033;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--page);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+
+/* ========================================
+   2. HEADER AND NAVIGATION
+======================================== */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px 28px;
+    background: var(--dark);
+    color: #fff;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.brand span {
+    color: #5fe19a;
+}
+
+.top-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 13px;
+}
+
+.top-links a {
+    color: #fff;
+}
+
+
+/* ========================================
+   3. PAGE LAYOUT AND TYPOGRAPHY
+======================================== */
+
+main {
+    max-width: 1500px;
+    margin: auto;
+    padding: 26px;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0 0 7px;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0 0 17px;
+}
+
+h3 {
+    font-size: 15px;
+    margin: 0 0 12px;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.panel {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-width: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 12px;
+}
+
+.full {
+    grid-column: 1/-1;
+}
+
+
+/* ========================================
+   4. FORMS AND BUTTONS
+======================================== */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #fff;
+    font: inherit;
+    font-size: 13px;
+}
+
+textarea {
+    min-height: 75px;
+    resize: vertical;
+}
+
+label {
+    display: block;
+    margin: 12px 0 6px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+button,
+.btn {
+    display: inline-block;
+    padding: 10px 13px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--green);
+    color: #fff;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+    background: #116b3b;
+    color: #fff;
+}
+
+.btn.secondary {
+    background: #e8eef3;
+    color: #253548;
+}
+
+.btn-assign-owner {
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   5. ALERTS AND STATUS BADGES
+======================================== */
+
+.alert {
+    padding: 13px 15px;
+    border-radius: 9px;
+    margin-bottom: 17px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+
+.success {
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.available {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.spot_cash {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.installment_current {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.overdue {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.forfeiture_review {
+    background: #27272a;
+    color: #fff;
+}
+
+
+/* ========================================
+   6. TABLES AND INLINE FORMS
+======================================== */
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    min-width: 760px;
+}
+
+th,
+td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #edf1f5;
+    vertical-align: top;
+}
+
+th {
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+}
+
+.inline-form {
+    display: inline-block;
+    margin: 2px;
+}
+
+.inline-form input[type=date] {
+    min-width: 135px;
+    width: auto;
+    padding: 7px;
+}
+
+.inline-form button {
+    padding: 8px;
+}
+
+
+/* ========================================
+   7. LOT DETAILS
+======================================== */
+
+.detail-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.detail {
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+}
+
+.detail small {
+    display: block;
+    color: var(--muted);
+    margin-bottom: 5px;
+}
+
+.detail strong {
+    font-size: 13px;
+}
+
+.empty {
+    padding: 22px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.map-image {
+    max-width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    display: block;
+    margin: 10px auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+
+/* ========================================
+   8. ASSIGN OWNER MODAL AND FORM
+======================================== */
+
+.owner-modal-content {
+    width: 100%;
+    max-width: 620px;
+    max-height: 88vh;
+    overflow-y: auto;
+    padding: 18px 20px;
+}
+
+.owner-form-grid,
+.owner-client-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 12px;
+}
+
+.owner-full {
+    grid-column: 1 / -1;
+}
+
+.owner-form-grid label,
+.owner-client-grid label {
+    display: block;
+    margin: 0 0 4px;
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.owner-form-grid input,
+.owner-form-grid select,
+.owner-form-grid textarea,
+.owner-client-grid input,
+.owner-client-grid textarea {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    font-size: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+}
+
+
+/* ========================================
+   9. ADD LOT MODAL
+======================================== */
+
+.lot-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.lot-modal.is-open {
+    display: flex;
+}
+
+.lot-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.lot-modal-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 24px;
+    background: #fff;
+    color: #1e293b;
+    border-radius: 14px;
+}
+
+.lot-modal-header,
+.lot-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.lot-modal-header {
+    margin-bottom: 20px;
+}
+
+.lot-modal-header h2,
+.lot-modal-header p {
+    margin-top: 0;
+}
+
+.lot-modal-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.lot-modal-close {
+    border: 0;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.lot-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.lot-form-grid label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.lot-form-grid input,
+.lot-form-grid textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+.lot-notes-field {
+    grid-column: 1 / -1;
+}
+
+.lot-modal-footer {
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+
+/* ========================================
+   10. MAP EDITOR AND TOOLBAR
+======================================== */
+
+.boundary-editor-toolbar {
+    margin-top: 16px;
+    padding: 16px;
+    border: 1px solid #d8dee8;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.editor-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.editor-buttons button.btn-danger {
+    background: #dc2626;
+    color: #fff;
+    border-color: #b91c1c;
+}
+
+.editor-buttons button.btn-danger:hover {
+    background: #991b1b;
+}
+
+.editor-buttons button {
+    padding: 9px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.editor-buttons button.active {
+    background: #166534;
+    color: white;
+}
+
+.editor-vertex {
+    fill: white;
+    stroke: #2563eb;
+    stroke-width: 2;
+    cursor: grab;
+    pointer-events: all;
+    vector-effect: non-scaling-stroke;
+}
+
+.editor-draft {
+    fill: #2563eb;
+    fill-opacity: .2;
+    stroke: #2563eb;
+    stroke-width: 2;
+    pointer-events: none;
+    vector-effect: non-scaling-stroke;
+}
+
+.map-editor {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #eef2f6;
+    border: 1px solid #dbe3ec;
+    border-radius: 10px;
+}
+
+.map-editor img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+.map-editor svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.detection-info {
+    margin-top: 12px;
+    padding: 12px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    color: #166534;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   11. DETECTED AND SAVED LOT POLYGONS
+======================================== */
+
+#detected-lot-overlay {
+    touch-action: none;
+}
+
+.detected-polygon {
+    fill: rgba(22, 163, 74, 0.16);
+    stroke: #16a34a;
+    stroke-width: 3;
+    vector-effect: non-scaling-stroke;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.detected-polygon:hover,
+.detected-polygon.selected {
+    fill: rgba(245, 158, 11, 0.30);
+    stroke: #d97706;
+    stroke-width: 4;
+}
+
+.saved-lot-polygon {
+    stroke: #ffffff;
+    stroke-width: 2;
+    fill-opacity: 0.78;
+    vector-effect: non-scaling-stroke;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: fill-opacity 0.15s ease, stroke-width 0.15s ease;
+}
+
+.saved-lot-polygon:hover {
+    fill-opacity: 0.95;
+    stroke: #facc15;
+    stroke-width: 4;
+}
+
+.saved-lot-label {
+    font-size: 18px;
+    font-weight: 800;
+    fill: #060505;
+    stroke: #e9eaef;
+    stroke-width: 3px;
+    paint-order: stroke fill;
+    stroke-linejoin: round;
+    pointer-events: none;
+}
+
+
+/* ========================================
+   12. BOUNDARY EDITOR INTERACTION FIXES
+======================================== */
+
+#detected-lot-overlay {
+    pointer-events: auto;
+    touch-action: none;
+}
+
+#detected-lot-overlay .detected-polygon,
+#detected-lot-overlay .saved-lot-polygon {
+    pointer-events: all;
+}
+
+#detected-lot-overlay .editor-draft {
+    pointer-events: none;
+}
+
+#detected-lot-overlay .editor-vertex {
+    pointer-events: all;
+    cursor: grab;
+    vector-effect: non-scaling-stroke;
+}
+
+#detected-lot-overlay .editor-vertex:active {
+    cursor: grabbing;
+}
+
+.editor-buttons button.active {
+    background: #166534;
+    color: #fff;
+    border-color: #166534;
+}
+
+
+/* ========================================
+   13. BULK DELETE POLYGON SELECTION
+======================================== */
+
+/* Multiple polygon selection for bulk delete */
+#detected-lot-overlay .detected-polygon.bulk-delete-selected,
+#detected-lot-overlay .saved-lot-polygon.bulk-delete-selected {
+    fill: rgba(239, 68, 68, 0.35) !important;
+    stroke: #ef4444 !important;
+    stroke-width: 4px !important;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   14. OWNERSHIP HISTORY
+======================================== */
+
+#ownershipHistoryPanel[hidden] {
+    display: none !important;
+}
+
+#ownershipHistoryPanel {
+    margin-top: 16px;
+}
+
+.ownership-modal[aria-hidden="true"] {
+    display: none;
+}
+
+.ownership-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.ownership-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.ownership-modal-content {
+    position: relative;
+    z-index: 1;
+    width: min(950px, 100%);
+    max-height: 85vh;
+    overflow: auto;
+    padding: 24px;
+    border-radius: 14px;
+    background: #fff;
+    color: #1f2937;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.ownership-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.ownership-modal-header h2 {
+    margin: 0 0 8px;
+}
+
+.ownership-modal-close {
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 8px;
+    padding: 4px 12px;
+    background: #e5e7eb;
+    color: #111827;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+body.ownership-modal-open {
+    overflow: hidden;
+}
+
+
+/* ========================================
+   15. RESPONSIVE LAYOUT
+======================================== */
+
+@media(max-width:950px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:600px) {
+    main {
+        padding: 14px;
+    }
+
+    .topbar {
+        padding: 15px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .form-grid,
+    .detail-list {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+    .panel {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+}
+
+@media (max-width:520px) {
+    .owner-form-grid,
+    .owner-client-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .owner-full {
+        grid-column: auto;
+    }
+}
+
+@media (max-width:520px) {
+    .lot-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lot-notes-field {
+        grid-column: auto;
+    }
+}
+.label-polygon-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.label-polygon-controls button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#label-polygon-status {
+    flex-basis: 100%;
+    font-size: 13px;
+}
